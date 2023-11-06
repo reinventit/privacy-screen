@@ -57,7 +57,7 @@ import UIKit
 
     private static func createPrivacyViewController(config: PrivacyScreenConfig) -> UIViewController {
         let privacyViewController = UIViewController()
-        if let imageName = config.imageName {
+        if let imageName = config.imageName, !imageName.isEmpty {
             privacyViewController.view.backgroundColor = UIColor.systemBackground
 
             let imageView = UIImageView()
@@ -69,7 +69,7 @@ import UIKit
         } else {
             privacyViewController.view.backgroundColor = UIColor.gray
         }
-        privacyViewController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+        privacyViewController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         return privacyViewController
     }
 }
